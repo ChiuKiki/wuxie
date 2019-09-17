@@ -3,14 +3,11 @@ body{
 	background-image: url(p4.jpg);
 	background-repeat: repeat;
     background-size: 100% auto;
+    font-family: "dengxian";
+    font-weight: 500;
+    color: grey;
    }
-/*标题图片样式*/
-img{
-   margin-top: 10px;
-   margin-left: 15%;
-   position: sticky;
-   width: 60% ;
-}
+
 /*必填内容空值提醒字体颜色*/
   .error{
 		color: red;
@@ -20,12 +17,13 @@ img{
     color: green;
     font-size: small;
   }
+
   /*整体*/
   .table{
   	 margin-left: 7%;
      margin-top:10px; margin-bottom: 30px;
   	 width: 70%;
-  	 padding:8% 8% 1% 8%;
+  	 padding:8% 8% 80% 8%;
      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
      text-align: left;
      letter-spacing:2px;
@@ -34,55 +32,50 @@ img{
      border-radius:20px;
      line-height: 24px;
   }
+
   /*标题样式*/ 
   b{
-  	padding:20%;
+  	padding:40%;
     text-align:center;
     font-size: x-large;
   }
+
   /*小号缩进字体*/
 .small{
    font-size:small;
    margin-left: 10px;
 }
+
  /*中等顶格字体*/
 .medium{
    margin-left:-10px;
    font-size:medium;
 }
+
 /*边框美化*/
 input{
    /*border-radius: 3px;*/
-   border-style:solid; 
-   /* border-width:1px 0 1px 1px; 
+   border-style:solid;
+   /* border-width:1px 0 1px 1px;
   border-color:#b4b4b4 #eeeeee #d8d8d8 #bbbbbb;*/
    border:none; border-bottom:1px solid gray;outline: none;
 }
-/*按钮美化*/
-.myButton1 {
-	width: 30px;
-	height: 30px;
-	border-radius: 100%;
-	background-color:white;
-	color: CornflowerBlue;
-    text-align: center;
-   
-	font-weight: bold;
-	font-size: small;
-	border: 1.5px solid CornflowerBlue;
-	box-shadow: 2px 2px 5px #888;
-	display: inline-block;
-	margin-right: 20px;
+textarea{
+    border-style:solid;
+    border-bottom:1px solid gray;outline: none;
 }
+select{
+    border-style:solid;
+    border-bottom:1px solid gray;outline: none;
+}
+
 /*最后的按钮*/
 .finalBt{
    margin:0 30% 20px; width: 40%;line-height: 38px;
    text-align: center;
    font-size: large;
    border-radius: 20px;position: relative; overflow: hidden; color: white;
-   /*! text-shadow:1px 1px 1px #fff; */
    border:1px solid white;
-   /*box-shadow: 0 0px 0px #fff inset,0 -1px 0  inset;*/
    background: -moz-linear-gradient(top,CornflowerBlue ,CornflowerBlue );
 
 }
@@ -98,8 +91,4 @@ input{
    background: -moz-linear-gradient(top,lightskyblue,lightskyblue);
    background: linear-gradient(top,#e4e8ec,#e4e8ec);
 }
-body{
-   font-family: "dengxian";
-   font-weight: 500;
-   color: grey;
-}
+
