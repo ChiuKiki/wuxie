@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+	<title>报名表</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+<div class="table">
+  <b>无协报名表</b>
+    <!--<p>想加入我们吗？请用心填写以下内容,谢谢。</p>-->
+  <p class="error">* 标注为必填内容</p>
+    <form method="post" action="">
+       <div id="leader" class="small">
+           <p id="top" class="medium"></p>
+           <p>姓名：<br>
+               <input id=name type="text" name="name" onblur="checkName(this.value)" >
+               <span class="error" id="nameErr">*</span><br></p>
+           <p>班级：<br>
+               <input id=classes type="text" name="classes" onblur="checkClass(this.value)">
+               <span class="error" id="classesErr">*</span><br></p>
+           <p>电话：<br>
+               <input id=phone type="text" name="phone" onblur="checkPhone(this.value)" >
+               <span class="error" id="phoneErr">*</span></p>
+           <p>第一志愿：<br>
+               <select id=prefer1 name="prefer1" onblur="checkPrefer1(this.value)" >
+                   <option value="" style="display:none">
+                   <option value="1">信息部</option>
+                   <option value="2">技术部</option>
+                   <option value="3">维修部</option>
+                   <option value="4">宣传部</option>
+                   <option value="5">微信团队</option>
+                   <option value="6">组织部</option>
+                   <option value="7">外联部</option>
+               </select>
+               <span class="error" id="prefer1Err">*</span><br></p>
+           <p>第二志愿：<br>
+               <select id=prefer2 name="prefer2">
+                   <option value="" style="display:none">
+                   <option value="1">信息部</option>
+                   <option value="2">技术部</option>
+                   <option value="3">维修部</option>
+                   <option value="4">宣传部</option>
+                   <option value="5">微信团队</option>
+                   <option value="6">组织部</option>
+                   <option value="7">外联部</option>
+               </select>
+           <p>是否服从调剂：<br>
+           <select id=regulate name="regulate" onblur="checkRegulate()">
+               <option value="" style="display:none">
+               <option value="1">是</option>
+               <option value="2">否</option>
+           </select>
+           <span class="error" id="regulateErr">*</span><br></p>
+           <p>自我介绍：<br>
+               <textarea rows="5" clos="30" style="resize: none " id=introduction type="text" name="introduction" onblur="checkIntroduction(this.value)" ></textarea>
+               <span class="error" id="introductionErr">*</span><br></p>
+           <p>个人特长：<br>
+               <textarea rows="5" clos="30" style="resize: none" id=hobby type="text" name="hobby" onblur="checkHobby(this.value)" ></textarea>
+               <span class="error" id="hobbyErr">*</span><br></p>
+       </div>
+    </form>
+</div>
+<div>
+    <button type="submit" class="finalBt" onclick="submit()">提交</button>
+</div>
+<script type="text/javascript" src="js/check.js"></script>
+<script type="text/javascript" src="js/submit.js"></script>
+<script type="text/javascript" src="js/json.js"></script>
+</body>
+</html>
