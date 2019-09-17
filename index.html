@@ -13,6 +13,7 @@
             event.preventDefault();
         });
     </script>
+    <meta name="viewport" content="initial-scale=1.0,user-scale=no">
 </head>
 
 <body>
@@ -22,15 +23,12 @@
     <form method="post" action="">
        <div id="leader" class="small">
            <p id="top" class="medium"></p>
-           <p>姓名：<br>
-               <input id=name type="text" name="name" onblur="checkName(this.value)" >
-               <span class="error" id="nameErr">*</span><br></p>
-           <p>班级：<br>
-               <input id=classes type="text" name="classes" onblur="checkClass(this.value)">
-               <span class="error" id="classesErr">*</span><br></p>
-           <p>电话：<br>
-               <input id=phone type="text" name="phone" onblur="checkPhone(this.value)" >
-               <span class="error" id="phoneErr">*</span></p>
+           <p>姓名  <span class="error" id="nameErr">*</span><br>
+               <input id=name type="text" name="name" onblur="checkName(this.value)" ><br></p>
+           <p>班级  <span class="error" id="classesErr">*</span><br>
+               <input id=classes type="text" name="classes" onblur="checkClass(this.value)"><br></p>
+           <p>电话  <span class="error" id="phoneErr">*</span><br>
+               <input id=phone type="text" name="phone" onblur="checkPhone(this.value)" ></p>
            <p>第一志愿：<br>
                <select id=prefer1 name="prefer1" onblur="checkPrefer1(this.value)" >
                    <option value="" style="display:none">
@@ -61,12 +59,10 @@
                <option value="2">否</option>
            </select>
            <span class="error" id="regulateErr">*</span><br></p>
-           <p>自我介绍：<br>
-               <textarea rows="10" clos="60"  id=introduction type="text" name="introduction" onblur="checkIntroduction(this.value)" ></textarea>
-               <span class="error" id="introductionErr">*</span><br></p>
-           <p>个人特长：<br>
-               <textarea rows="10" clos="60" id=hobby type="text" name="hobby" onblur="checkHobby(this.value)" ></textarea>
-               <span class="error" id="hobbyErr">*</span><br></p>
+           <p>自我介绍  <span class="error" id="introductionErr">*</span><br>
+               <textarea rows="10" clos="40"  id=introduction type="text" name="introduction" onblur="checkIntroduction(this.value)" ></textarea><br></p>
+           <p>个人特长  <span class="error" id="hobbyErr">*</span><br>
+               <textarea rows="10" clos="40" id=hobby type="text" name="hobby" onblur="checkHobby(this.value)" ></textarea><br></p>
        </div>
     </form>
 </div>

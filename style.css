@@ -23,7 +23,7 @@ body{
   	 margin-left: 7%;
      margin-top:10px; margin-bottom: 30px;
   	 width: 70%;
-  	 padding:8% 8% 30% 8%;
+  	 padding:8% 8% 8% 8%;
      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
      text-align: left;
      letter-spacing:2px;
@@ -43,13 +43,13 @@ body{
   /*小号缩进字体*/
 .small{
     margin-left: 10px;
-   font-size:2vw;
+   font-size:small;
 }
 
  /*中等顶格字体*/
 .medium{
    margin-left:-10px;
-   font-size:4vw;
+   font-size:medium;
 }
 
 /*边框美化*/
