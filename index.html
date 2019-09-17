@@ -3,7 +3,16 @@
 <html>
 <head>
 	<title>报名表</title>
-<link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="js/check.js"></script>
+    <script type="text/javascript" src="js/submit.js"></script>
+    <script type="text/javascript" src="js/json.js"></script>
+    <script>
+        //禁止手机body滑动
+        document.addEventListener('touchmove', function (event) {
+            event.preventDefault();
+        });
+    </script>
 </head>
 
 <body>
@@ -53,10 +62,10 @@
            </select>
            <span class="error" id="regulateErr">*</span><br></p>
            <p>自我介绍：<br>
-               <textarea rows="5" clos="30" style="resize: none " id=introduction type="text" name="introduction" onblur="checkIntroduction(this.value)" ></textarea>
+               <textarea rows="10" clos="60"  id=introduction type="text" name="introduction" onblur="checkIntroduction(this.value)" ></textarea>
                <span class="error" id="introductionErr">*</span><br></p>
            <p>个人特长：<br>
-               <textarea rows="5" clos="30" style="resize: none" id=hobby type="text" name="hobby" onblur="checkHobby(this.value)" ></textarea>
+               <textarea rows="10" clos="60" id=hobby type="text" name="hobby" onblur="checkHobby(this.value)" ></textarea>
                <span class="error" id="hobbyErr">*</span><br></p>
        </div>
     </form>
@@ -64,8 +73,6 @@
 <div>
     <button type="submit" class="finalBt" onclick="submit()">提交</button>
 </div>
-<script type="text/javascript" src="js/check.js"></script>
-<script type="text/javascript" src="js/submit.js"></script>
-<script type="text/javascript" src="js/json.js"></script>
+
 </body>
 </html>

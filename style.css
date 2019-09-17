@@ -23,44 +23,45 @@ body{
   	 margin-left: 7%;
      margin-top:10px; margin-bottom: 30px;
   	 width: 70%;
-  	 padding:8% 8% 80% 8%;
+  	 padding:8% 8% 40% 8%;
      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
      text-align: left;
      letter-spacing:2px;
      background-color: white ;
      opacity:0.8; /*透明度*/
      border-radius:20px;
-     line-height: 24px;
+     line-height: 30px;
   }
 
   /*标题样式*/ 
   b{
-  	padding:40%;
+  	padding:30%;
     text-align:center;
-    font-size: x-large;
+    font-size: 4vw;
   }
 
   /*小号缩进字体*/
 .small{
-   font-size:small;
-   margin-left: 10px;
+    margin-left: 10px;
+   font-size:2vw;
 }
 
  /*中等顶格字体*/
 .medium{
    margin-left:-10px;
-   font-size:medium;
+   font-size:4vw;
 }
 
 /*边框美化*/
 input{
    /*border-radius: 3px;*/
    border-style:solid;
-   /* border-width:1px 0 1px 1px;
+    /*border-width:1px 0 1px 1px;
   border-color:#b4b4b4 #eeeeee #d8d8d8 #bbbbbb;*/
    border:none; border-bottom:1px solid gray;outline: none;
 }
 textarea{
+    resize: none;
     border-style:solid;
     border-bottom:1px solid gray;outline: none;
 }
