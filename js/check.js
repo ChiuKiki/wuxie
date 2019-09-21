@@ -1,35 +1,15 @@
-//检查姓名是否存在&正确
+//检查姓名是否正确
 function checkName(str){
     var checkName = /^[\u4E00-\u9FA5\uF900-\uFA2D]+$/;
     var result = checkName.test(str);
-    var nameErrLd = document.getElementById("nameErr");
+    var nameErr = document.getElementById("nameErr");
     if(result == false){
         document.getElementById("nameErr").innerHTML = "请输入中文名！";
-        nameErrLd.setAttribute("class","error");
+        nameErr.setAttribute("class","error");
+        mainResult = 0;
     }else{
-        var url = "php/checkExistName.php";
-        var xmlhttp;
-        if(window.XMLHttpRequest){
-            xmlhttp = new XMLHttpRequest();
-        }else{
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        if(xmlhttp){
-            xmlhttp.onreadystatechange = function(){
-                if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-                    document.getElementById("nameErr").innerHTML=xmlhttp.responseText;
-                    if (nameErrLd.innerHTML == "√") {
-                        nameErrLd.setAttribute("class","pass");
-                    }else{
-                        nameErrLd.setAttribute("class","error");
-                    }
-                }
-            };
-            xmlhttp.open("POST",url+"?check="+str,true);
-            xmlhttp.send();
-        }else{
-            alert("Your browser does not support XMLHTTP.");
-        }
+        document.getElementById("nameErr").innerHTML = "√";
+        nameErr.setAttribute("class","pass");
     }
 }
 

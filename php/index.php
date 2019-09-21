@@ -1,15 +1,15 @@
 ﻿<?php
-
+//创建链接
 $user="root";
 $password="001230";
+$pdo = new PDO('mysql:host=localhost; dbname=wuxie', $user, $password);
 
-//获取json数据
+//获取数据
 $teamJson= $_POST;
 foreach ($teamJson as $key => $value) {
     $a = $key;
 }
 $team = json_decode($a,true);
-
 $name = $team['name'];
 $classes = $team['classes'];
 $phone = $team['phone'];
@@ -40,10 +40,26 @@ function regulate($query){
     return $result;
 }
 
+//判断名字是否重复
+$checkExistName = "SELECT  * FROM `wuxieTable` WHERE `name` = '$name'";
+$update = $pdo->query($checkExistName);
+$updateResult = 0;
+foreach ($update as $arr){
+    $updateResult = 1;
+}
 
-//创建链接
-$pdo = new PDO('mysql:host=localhost; dbname=wuxie', $user, $password);
-$sql = "INSERT INTO wuxieTable(name,classes,phone,prefer1,prefer2,introduction,hobby,regulate) VALUES('$name','$classes','$phone','$prefer1','$prefer2','$introduction','$hobby','$regulate')";
+//写入数据库
+$sql = Null;
+if($updateResult){
+    //更新
+    $sql = "UPDATE wuxieTable 
+            SET name='$name',classes='$classes',phone='$phone',prefer1='$prefer1',prefer2='$prefer2',introduction='$introduction',hobby='$hobby',regulate='$regulate'
+            WHERE name='$name'";
+}else{
+    //插入
+    $sql = "INSERT INTO wuxieTable(name,classes,phone,prefer1,prefer2,introduction,hobby,regulate) 
+            VALUES('$name','$classes','$phone','$prefer1','$prefer2','$introduction','$hobby','$regulate')";
+}
 $result = $pdo->exec($sql);
 
 if (! $result) {
@@ -52,3 +68,4 @@ if (! $result) {
 }else{
     echo ("报名成功！期待您的加入，无协等你哦❤");
 }
+
