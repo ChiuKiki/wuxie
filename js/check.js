@@ -19,7 +19,7 @@ function checkGender(str){
     var result = checkGender.test(str);
     var genderErr = document.getElementById("genderErr");
     if(result == false){
-        document.getElementById("genderErr").innerHTML = "性别不对哦！";
+        document.getElementById("genderErr").innerHTML = "请输入“男”或“女”！";
         genderErr.setAttribute("class","error");
         mainResult = 0;
     }else{

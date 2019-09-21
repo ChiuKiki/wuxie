@@ -2,21 +2,35 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <title>报名表查询</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-<p>按部门查询</p>
+<b>报名表查询</b>
 <form method="post" action="query.php">
-    <select id=department name="department" onblur="checkPrefer1(this.value)" >
-        <option value="0">all</option>
-        <option value="1">信息部</option>
-        <option value="2">技术部</option>
-        <option value="3">维修部</option>
-        <option value="4">宣传部</option>
-        <option value="5">微信团队</option>
-        <option value="6">组织部</option>
-        <option value="7">外联部</option>
-    </select>
-    <button type="submit">确定</button>
+    <div class="table">
+        <p class="medium"></p>
+        <label>部门：</label>
+        <select id=department name="department" >
+            <option value="0">all</option>
+            <option value="1">信息部</option>
+            <option value="2">技术部</option>
+            <option value="3">维修部</option>
+            <option value="4">宣传部</option>
+            <option value="5">微信团队</option>
+            <option value="6">组织部</option>
+            <option value="7">外联部</option>
+        </select>
+        <p class="medium"></p>
+        <label>志愿：</label>
+        <select id=prefer name="prefer" >
+            <option value="0">all</option>
+            <option value="1">第一志愿</option>
+            <option value="2">第二志愿</option>
+        </select>
+        <p class="medium"></p>
+        <button type="submit">确定</button>
+    </div>
 </form>
 </body>
 </html>

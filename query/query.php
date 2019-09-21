@@ -8,8 +8,10 @@ mysqli_select_db($con,"wuxie");
 mysqli_set_charset($con, "utf8");
 
 //获取数据
-$value = $_POST["department"];
-$department = department($value);
+$departmentValue = $_POST["department"];
+$preferValue = $_POST["prefer"];
+$department = department($departmentValue);
+//$prefer = prefer($preferValue);
 
 //确定所选部门
 function department($query){
@@ -25,22 +27,51 @@ function department($query){
     return $department;
 }
 
-//确定部门查询语句
-function sql($value,$department){
+/*
+//确定所选志愿
+function prefer($query){
+    $prefer = NULL;
+    if($query == 0){$prefer = "all";}
+    if($query == 1){$prefer = "第一志愿";}
+    if($query == 2){$prefer = "第二志愿";}
+    return $prefer;
+}
+*/
+
+//确定查询语句
+function sql($departmentValue,$preferValue,$department){
     $sql = NULL;
-    if($value == 0 || $value == NULL){
-        $sql="SELECT DISTINCT * FROM wuxieTable";
-    }else{
-        $sql = "SELECT DISTINCT * FROM wuxieTable WHERE prefer1='$department' OR prefer2='$department'";
+    switch($preferValue){
+        case "0":   //所有志愿
+            if($departmentValue == 0){  //所有部门
+                $sql="SELECT DISTINCT * FROM wuxieTable";
+            }else{  //指定部门
+                $sql = "SELECT DISTINCT * FROM wuxieTable WHERE prefer1='$department' OR prefer2='$department'";
+            }
+            break;
+        case "1":   //第一志愿
+            if($departmentValue == 0){  //所有部门
+                $sql="SELECT DISTINCT * FROM wuxieTable";
+            }else{  //指定部门
+                $sql = "SELECT DISTINCT * FROM wuxieTable WHERE prefer1='$department'";
+            }
+            break;
+        case "2":   //第二志愿
+            if($departmentValue == 0){  //所有部门
+                $sql="SELECT DISTINCT * FROM wuxieTable";
+            }else{  //指定部门
+                $sql = "SELECT DISTINCT * FROM wuxieTable WHERE prefer2='$department'";
+            }
+            break;
     }
     return $sql;
 }
 
 //查询
-$sql =sql($value,$department);
+$sql =sql($departmentValue,$preferValue,$department);
 $result = mysqli_query($con,$sql);
 
-echo department($_POST["department"])."：";
+echo $department."：";
 
 $num = 0;
 
