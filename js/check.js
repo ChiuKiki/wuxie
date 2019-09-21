@@ -13,6 +13,21 @@ function checkName(str){
     }
 }
 
+//检查性别是否正确
+function checkGender(str){
+    var checkGender = /^男$|^女$/;
+    var result = checkGender.test(str);
+    var genderErr = document.getElementById("genderErr");
+    if(result == false){
+        document.getElementById("genderErr").innerHTML = "性别不对哦！";
+        genderErr.setAttribute("class","error");
+        mainResult = 0;
+    }else{
+        document.getElementById("genderErr").innerHTML = "√";
+        genderErr.setAttribute("class","pass");
+    }
+}
+
 //检查班级是否为空
 function checkClass(str){
     var checkClass = /\S/;

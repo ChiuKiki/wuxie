@@ -1,6 +1,7 @@
 //json打包数据
 function pack(){
     var name = document.getElementById("name").value;
+    var gender = document.getElementById("gender").value;
     var classes = document.getElementById("classes").value;
     var phone = document.getElementById("phone").value;
     var prefer1 = document.getElementById("prefer1").value;
@@ -10,6 +11,7 @@ function pack(){
     var regulate = document.getElementById("regulate").value;
     var team_json ={
         "name":name,
+        "gender":gender,
         "classes":classes,
         "phone":phone,
         "prefer1":prefer1,

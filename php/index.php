@@ -11,6 +11,7 @@ foreach ($teamJson as $key => $value) {
 }
 $team = json_decode($a,true);
 $name = $team['name'];
+$gender = $team['gender'];
 $classes = $team['classes'];
 $phone = $team['phone'];
 $prefer1 = department($team['prefer1']);
@@ -53,12 +54,12 @@ $sql = Null;
 if($updateResult){
     //更新
     $sql = "UPDATE wuxieTable 
-            SET name='$name',classes='$classes',phone='$phone',prefer1='$prefer1',prefer2='$prefer2',introduction='$introduction',hobby='$hobby',regulate='$regulate'
+            SET name='$name',gender='$gender',classes='$classes',phone='$phone',prefer1='$prefer1',prefer2='$prefer2',introduction='$introduction',hobby='$hobby',regulate='$regulate'
             WHERE name='$name'";
 }else{
     //插入
-    $sql = "INSERT INTO wuxieTable(name,classes,phone,prefer1,prefer2,introduction,hobby,regulate) 
-            VALUES('$name','$classes','$phone','$prefer1','$prefer2','$introduction','$hobby','$regulate')";
+    $sql = "INSERT INTO wuxieTable(name,gender,classes,phone,prefer1,prefer2,introduction,hobby,regulate) 
+            VALUES('$name','$gender','$classes','$phone','$prefer1','$prefer2','$introduction','$hobby','$regulate')";
 }
 $result = $pdo->exec($sql);
 

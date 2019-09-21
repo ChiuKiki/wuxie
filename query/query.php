@@ -47,6 +47,7 @@ $num = 0;
 echo "<table border='1'>
 <tr>
 <th>姓名</th>
+<th>性别</th>
 <th>班级</th>
 <th>电话</th>
 <th>第一志愿</th>
@@ -58,6 +59,7 @@ echo "<table border='1'>
 while($row = mysqli_fetch_array($result)) {
     echo "<tr>";
     echo "<td>" . $row['name'] . "</td>";
+    echo "<td>" . $row['gender'] . "</td>";
     echo "<td>" . $row['classes'] . "</td>";
     echo "<td>" . $row['phone'] . "</td>";
     echo "<td>" . $row['prefer1'] . "</td>";

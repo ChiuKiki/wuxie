@@ -34,6 +34,7 @@ function submit(){
 
 function result(){
     var nameErr = document.getElementById('nameErr').innerHTML;
+    var genderErr = document.getElementById("genderErr").innerHTML;
     var classesErr = document.getElementById("classesErr").innerHTML;
     var phoneErr = document.getElementById('phoneErr').innerHTML;
     var prefer1Err = document.getElementById('prefer1Err').innerHTML;
@@ -41,7 +42,7 @@ function result(){
     var hobbyErr = document.getElementById("hobbyErr").innerHTML;
     var regulateErr = document.getElementById("regulateErr").innerHTML;
 
-    if(nameErr=="√" && classesErr=="√" && phoneErr=="√" && prefer1Err=="√" && introductionErr=="√" && hobbyErr=="√" && regulateErr=="√"){
+    if(nameErr=="√" && genderErr=="√"&& classesErr=="√" && phoneErr=="√" && prefer1Err=="√" && introductionErr=="√" && hobbyErr=="√" && regulateErr=="√"){
         mainResult=1;
     }else{
         mainResult=0;
