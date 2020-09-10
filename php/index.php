@@ -1,8 +1,8 @@
 ﻿<?php
 //创建链接
 $user="root";
-$password="001230";
-//$pdo = new PDO('mysql:host=localhost; dbname=wuxie', $user, $password);
+$password="Qp3361466";
+$pdo = new PDO('mysql:host=localhost; dbname=wuxie', $user, $password);
 
 //获取数据
 $teamJson= $_POST;
