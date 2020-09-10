@@ -1,7 +1,7 @@
 ﻿<?php
 //创建链接
 $user="root";
-$password="Qp3361466";
+$password="001230";
 $pdo = new PDO('mysql:host=localhost; dbname=wuxie', $user, $password);
 
 //获取数据
